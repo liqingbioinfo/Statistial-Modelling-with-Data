@@ -1,7 +1,7 @@
 #install.packages("GGally")
 
 library(ggplot2)
-setwd("E:/PHD/Courses/Data 603/Datasets/DATA_603_L01/")
+setwd("D:/Github/Statistial-Modelling-with-Data/Datasets/DATA_603_L01")
 
 ###Construct criteria combos 5 for In class practice problem 13
 library(olsrr)
@@ -93,9 +93,10 @@ grid.arrange(
 
 
 ###=================================================================================
-###In class practice problem 15! Last in cladd question for model selection. 
+###In class practice problem 15! Last in class question for model selection. 
 #read.table("", sep="") #give right deliminator of file to read.table
 #workhours = read.table("CLERICAL.csv", sep=",") 
+
 workhours = read.csv("CLERICAL.csv",header=TRUE)
 head(workhours)
 
@@ -104,7 +105,7 @@ head(workhours)
 firstodermodel <- lm(Y ~ X1+X2+X3+X4+X5+X6+X7, data=workhours)
 summary(firstodermodel)
 
-model1 <- lm(Y ~ X2+X4+X5, data=workhours)
+model1 <- lm(Y ~ X2+X4+X5, data=workhours) #
 
 anova(model1, firstodermodel) 
 #null hypothesis, coeffcients for all removed predictors=0. P=0.08 > 0.05. We cannot refuse H0.
@@ -200,7 +201,6 @@ summary(optimal_model_from_combos5_inter_refine1_highorder2)
 ###Please go ahead trying high order for X1, X3, X4, X6
 ###The optimal model we get from approach 3 is:
 optimal_model_approach3 <-lm(Y~(X1+X2+X3+X4+X5+X6+X1:X6+X2:X6), data=workhours)
-
 
 
 ###Comparison between the optimal models from three approaches
