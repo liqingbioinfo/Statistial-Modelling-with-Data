@@ -1,0 +1,6 @@
+Q： Threshold for classification
+A： https://stackoverflow.com/questions/28716241/controlling-the-threshold-in-logistic-regression-in-scikit-learn
+
+
+R：
+1. https://python.datasciencebook.ca/index.html
